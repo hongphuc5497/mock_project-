@@ -1,0 +1,109 @@
+<div class="top_sns_wrap">
+	  <div class="top_sns_inner">
+		  <div class="share-button">
+		    <div class="share-button-secondary">
+		      <div class="share-button-secondary-content">
+		        share on facebook
+		      </div>
+		    </div>
+		    <div class="share-button-primary">
+		      <%= image_tag("common/side_fb.png") %>					
+					<%# <%= social_share_button_tag(@blog.id) %>
+		    </div>
+		  </div>
+		  <div class="share-button clearfix">
+		    <div class="share-button-secondary">
+		      <div class="share-button-secondary-content">
+		        share on instagram
+		      </div>
+		    </div>
+		    <div class="share-button-primary">
+		      <%= image_tag("common/side_insta.png") %>
+		    </div>
+		  </div>
+		  <div class="share-button">
+		    <div class="share-button-secondary">
+		      <div class="share-button-secondary-content">
+		        share on twitter
+		      </div>
+		    </div>
+		    <div class="share-button-primary">
+		      <%= image_tag("common/side_twitter.png") %>
+		    </div>		
+		  </div>
+		  <div class="change_btn_block">
+			  <p class="change_btn" id="SideChangeBtn">
+				  <%= image_tag("common/side_change.png") %>
+			  </p>
+			  <div class="side_change_money">
+			  	<div class="top_money_left sp">
+	          <div class="top_money_rate sp">
+	            <p class="top_money_date sp">2017/10/01</p>
+	            <p class="top_money_change_rate sp">1JPY  ≒  130.77EUR</p>
+	          </div>
+	          <div class="top_money_change sp">
+	            <div class="top_money_inner sp">
+	              <input type="text" class="top_money_input sp">
+	              <p class="money_type SideMoneyCountry sp" id="SideMoneyOrigin">JPY</p>
+	            </div>
+	            <%= image_tag("common/change_icon.png", class: "change_icon sp", id: "SideExChangeBtn") %>
+	            <div class="top_money_inner sp">
+	              <input type="text" class="top_money_input sp">
+	              <p class="money_type SideMoneyCountry sp" id="SideMoneyChange">EUR</p>
+	            </div>
+	          </div>
+	          <button class="top_money_change_btn sp">calculate</button>
+	        </div>
+	        <div class="top_money_right sp clearfix">
+	          <ul class="top_money_list sp">
+	            <li class="top_money_item side_exchange">
+	              <p class="top_money_contury" data-contury="USD">
+	                <%= image_tag("common/usd.png", alt: "usd") %>
+	              </p>
+	            </li>
+	            <li class="top_money_item side_exchange">
+	              <p class="top_money_contury" data-contury="KRW">
+	                <%= image_tag("common/krw.png", alt: "krw") %>
+	              </p>
+	            </li>
+	            <li class="top_money_item side_exchange">
+	              <p class="top_money_contury" data-contury="TWD">
+	                <%= image_tag("common/twd.png", alt: "twd") %>
+	              </p>
+	            </li>
+	            <li class="top_money_item active side_exchange">
+	              <p class="top_money_contury" data-contury="EUR">
+	                <%= image_tag("common/eur.png", alt: "eur") %>
+	              </p>
+	            </li>
+	            <li class="top_money_item side_exchange">
+	              <p class="top_money_contury" data-contury="CNY">
+	                <%= image_tag("common/cny.png", alt: "cny") %>
+	              </p>
+	            </li>
+	            <li class="top_money_item side_exchange">
+	              <p class="top_money_contury" data-contury="THB">
+	                <%= image_tag("common/thb.png", alt: "thb") %>
+	              </p>
+	            </li>
+	            <li class="top_money_item side_exchange">
+	              <p class="top_money_contury" data-contury="GBP">
+	                <%= image_tag("common/gbp.png", alt: "gbp") %>
+	              </p>
+	            </li>
+	            <li class="top_money_item side_exchange">
+	              <p class="top_money_contury" data-contury="HKD">
+	                <%= image_tag("common/hkd.png", alt: "hkd") %>
+	              </p>
+	            </li>
+	            <li class="top_money_item side_exchange">
+	              <p class="top_money_contury" data-contury="AUD">
+	                <%= image_tag("common/aud.png", alt: "aud") %>
+	              </p>
+	            </li>
+	          </ul>
+	        </div>
+		  	</div>
+		  </div>
+	  </div>
+  </div>

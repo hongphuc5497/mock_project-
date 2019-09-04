@@ -1,0 +1,116 @@
+<header>
+	<div class="header_wrap_pc_top">
+		<div class="header_wrap_inner">
+			<a href="/" class="header_logo">
+				<%= image_tag("common/logo.png") %>
+			</a>
+			<nav class="header_top_menu">
+				<a href="/experience" class="header_menu_link">
+					Experience
+				</a>
+				<a href="/" class="header_menu_link">
+					Restaurant
+				</a>
+				<a href="/" class="header_menu_link">
+					Rental space
+				</a>
+				<a href="/blog" class="header_menu_link">
+					Blog
+				</a>
+				<a href="/" class="header_menu_link">
+					AccessSUiTO
+				</a>
+				<a href="/" class="header_menu_link">
+					FAQ
+				</a>
+			</nav>
+			<select name="language_choose" class="header_select">
+				<option value="English">English</option>
+				<option value="Chinese">Chinese</option>
+			</select>
+		</div>	
+	</div>
+	<div class="header_exp_filter" id="HeaderExpFilter"></div>
+	<div class="header_wrap_pc_scroll" id="HeaderScroll">
+		<div class="header_wrap_inner">
+			<a href="" class="header_logo">
+				<%= image_tag("common/logo_b.png") %>
+			</a>
+			<form action="" method="">
+				<div class="header_search_block">
+					<input type="text" name="header_date" class="header_search_date" id="HeaderSearchDate" placeholder="Any Time">
+					<div class="header_exp_block">
+  					<input type="text" name="header_place" class="header_search_place" id="HeaderSearchPlace" placeholder="Any Where">
+  					<div class="header_exp_popup" id="HeaderPlacePop">
+  							
+							<div class="" id="HeaderSearchPlace_Choose">
+      				  <ul class="top_mv_place_list">
+        				  <li class="top_mv_place_item" data-place="博多 hakata">博多 hakata</li>
+        				  <li class="top_mv_place_item" data-place="天神 tenjin">天神 tenjin</li>
+        				  <li class="top_mv_place_item" data-place="中洲 Nakasu">中洲 Nakasu</li>
+        				  <li class="top_mv_place_item" data-place="大濠公園 Ohori Park">大濠公園 Ohori Park</li>
+        				  <li class="top_mv_place_item" data-place="百道浜 Momochihama">百道浜 Momochihama</li>
+        				  <li class="top_mv_place_item" data-place="西新 Nishijin">西新 Nishijin</li>
+        				  <li class="top_mv_place_item" data-place="西区 Nishiku">西区 Nishiku</li>
+        				  <li class="top_mv_place_item" data-place="東区 Higashiku">東区 Higashiku</li>
+      				  </ul>
+      				</div>
+  							
+  				</div>
+					</div>
+					<div class="header_exp_block">
+						<input type="text" name="header_exp" class="header_search_exp" id="HeaderSearchExp" placeholder="All Experience">
+						<div class="header_exp_popup" id="HeaderExpPop">
+							
+							<div class="checkbox_style">
+					      <input type="checkbox" name="experience" value="header_exp01" id="Exp01" data-hdex="アート">
+					      <label for="Exp01"><span>アート</span></label>
+    					</div>
+							<div class="checkbox_style">
+								<input type="checkbox" name="experience" value="header_exp02" id="Exp02" data-hdex="ライフスタイル">
+								<label for="Exp02"><span>ライフスタイル</span></label>
+							</div>
+							<div class="checkbox_style">
+								<input type="checkbox" name="experience" value="header_exp03" id="Exp03" data-hdex="フード＆ドリンク">
+								<label for="Exp03"><span>フード＆ドリンク</span></label>			
+							</div>
+							
+						</div>
+					</div>
+					<input type="submit" value="検索" class="header_search_submit">
+				</div>
+			</form>
+			<a href="" class="header_info_btn">
+				<%= image_tag("common/info_book_icon.png", alt: "how to book") %>
+			</a>
+			<div class="header_right_block">
+  			<div class="header_menu" id="MenuBtn">
+          <span class="header_line header_top_line"></span>
+          <span class="header_line header_middle_line"></span>
+          <span class="header_line header_bottom_line"></span>
+        </div>
+        <nav class="header_nav_block">
+      	  <a href="" class="header_menu_link">
+      			Experience
+      		</a>
+      		<a href="" class="header_menu_link">
+      			Restaurant
+      		</a>
+      		<a href="" class="header_menu_link">
+      			Rental space
+      		</a>
+      		<a href="" class="header_menu_link">
+      			Blog
+      		</a>
+      		<a href="" class="header_menu_link">
+      			AccessSUiTO
+      		</a>
+      		<a href="" class="header_menu_link">
+      			FAQ
+      		</a>
+        </nav>
+			</div>
+		</div>
+	</div>
+	
+</header>

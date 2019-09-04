@@ -1,0 +1,615 @@
+<%= content_for :title_header do %>
+    SUITO
+<% end %>
+<div class="top_main_view">
+  <section class="top_mv_wrap">
+    <div class="common_inner">
+      <ul class="top_mv_bxslider">
+        <li class="top_mv_list" style="background: url(<%= image_url('top/top_slide01')%>) center center no-repeat;background-size: cover;">
+          <div class="top_mv_info_block">
+            <a href="" class="top_mv_info_title">Mandala Workshop @Sep 23th</a>
+            <div class="top_mv_info_bottom">
+              <a href="" class="top_mv_info_place">Momochihama</a>
+              <a href="" class="top_mv_info_tag">Entertainment</a>
+            </div>
+          </div>
+        </li>
+        <li class="top_mv_list" style="background: url(<%= image_url('top/top_slide02')%>) center center no-repeat;background-size: cover;">
+          <div class="top_mv_info_block">
+            <a href="" class="top_mv_info_title">Mandala Workshop @Sep 23th</a>
+            <div class="top_mv_info_bottom">
+              <a href="" class="top_mv_info_place">Momochihama</a>
+              <a href="" class="top_mv_info_tag">Entertainment</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="top_mv_filter" id="MvExpFilter"></div>
+      <h1 class="top_mv_title">Find Things to Do in FUKUOKA</h1>
+      <div class="top_mv_search_wrap">
+        <form action="" method="" class="top_mv_form">
+          <div class="header_search_block top_mv">
+            <input type="text" name="top_date" class="header_search_date" id="MvSearchDate" placeholder="Any Time">
+            <input type="text" name="top_place" class="header_search_place" id="MvSearchPlace" placeholder="Any Where">
+            <div class="header_exp_block">
+              <input type="text" name="top_exp" class="header_search_exp" id="MvSearchExp" placeholder="All Experience">
+            </div>
+            <input type="submit" value="検索" class="header_search_submit">
+          </div>
+          <div class="header_exp_popup top_mv_search" id="MvSearchPop">
+            
+            <div class="top_mv_search_inner" id="MvSearchPlace_Choose">
+              <ul class="top_mv_place_list">
+                <li class="top_mv_place_item" data-place="博多 hakata">博多 hakata</li>
+                <li class="top_mv_place_item" data-place="天神 tenjin">天神 tenjin</li>
+                <li class="top_mv_place_item" data-place="中洲 Nakasu">中洲 Nakasu</li>
+                <li class="top_mv_place_item" data-place="大濠公園 Ohori Park">大濠公園 Ohori Park</li>
+                <li class="top_mv_place_item" data-place="百道浜 Momochihama">百道浜 Momochihama</li>
+                <li class="top_mv_place_item" data-place="西新 Nishijin">西新 Nishijin</li>
+                <li class="top_mv_place_item" data-place="西区 Nishiku">西区 Nishiku</li>
+                <li class="top_mv_place_item" data-place="東区 Higashiku">東区 Higashiku</li>
+              </ul>
+            </div>
+            
+            <div class="top_mv_search_inner" id="MvSearchExp_Choose">		
+              <div class="checkbox_style">
+                <input type="checkbox" name="mv_experience" value="header_exp01" id="mv_Exp01" data-ex="アート">
+                <label for="mv_Exp01"><span>アート</span></label>
+              </div>
+              <div class="checkbox_style">
+                <input type="checkbox" name="mv_experience" value="header_exp02" id="mv_Exp02" data-ex="ライフスタイル">
+                <label for="mv_Exp02"><span>ライフスタイル</span></label>
+              </div>
+              <div class="checkbox_style">
+                <input type="checkbox" name="mv_experience" value="header_exp03" id="mv_Exp03" data-ex="フード＆ドリンク">
+                <label for="mv_Exp03"><span>フード＆ドリンク</span></label>			
+              </div>
+            </div>
+            
+          </div>
+        </form>
+      </div>
+      <a href="#WhatWrap" class="top_mv_arrow_btn">
+        <%= image_tag("top/top_mv_arrow.png") %>
+      </a>
+    </div>
+  </section>
+  <section class="top_what_wrap" id="WhatWrap">
+    <div class="common_inner">
+      <div id="grid" class="main top_common_title">
+        <div class="view">
+          <div class="view-back">
+            <a href="/">more</a>
+          </div>
+          <%= image_tag("top/top_title01") %>
+        </div>
+      </div>
+      <h1 class="top_common_sp_title">
+        <%= image_tag("top/top_title01") %>
+      </h1>
+      <ul class="top_what_list">
+        <li class="top_what_item">
+          <a href="" class="top_what_link">
+            <%= image_tag("common/info_icon", alt: "get information", class: "black")%>
+            <%= image_tag("common/info_icon_w", alt: "get information", class: "white")%>
+            <p class="text">
+              Tourist information
+            </p>
+          </a>
+        </li>
+        <li class="top_what_item">
+          <a href="" class="top_what_link">
+            <%= image_tag("common/calender_icon02", alt: "book experience", class: "black")%>
+            <%= image_tag("common/calender_icon02_w", alt: "book experience", class: "white")%>
+            <p class="text">
+              Experience booking
+            </p>
+          </a>
+        </li>
+        <li class="top_what_item">
+          <a href="" class="top_what_link">
+            <%= image_tag("common/eat_icon", alt: "eat japanese food", class: "black")%>
+            <%= image_tag("common/eat_icon_w", alt: "eat japanese food", class: "white")%>
+            <p class="text">
+              Japanese restaurant
+            </p>
+          </a>
+        </li>
+        <li class="top_what_item">
+          <a href="" class="top_what_link">
+            <%= image_tag("common/rent_icon", alt: "rent space", class: "black")%>
+            <%= image_tag("common/rent_icon_w", alt: "rent space", class: "white")%>
+            <p class="text">
+              Rental space
+            </p>
+          </a>
+        </li>
+        <li class="top_what_item">
+          <a href="" class="top_what_link">
+            <%= image_tag("common/bag_icon", alt: "keep baggage", class: "black")%>
+            <%= image_tag("common/bag_icon_w", alt: "keep baggage", class: "white")%>
+            <p class="text">
+              Luggage service
+            </p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a href="" class="common_sp_more">more</a>
+  </section>
+  <section class="top_hot_wrap">
+    <div class="common_inner">
+      <div id="grid" class="main top_common_title">
+        <div class="view">
+          <div class="view-back">
+            <a href="/experiences">more</a>
+          </div>
+          <%= image_tag("top/top_title02") %>
+        </div>
+      </div>
+      <h1 class="top_common_sp_title">
+        <%= image_tag("top/top_title02") %>
+      </h1>
+      <div class="top_hot_main clearfix">
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front" style="background: url(<%= image_url('top/pic01')%>) center center no-repeat;background-size: cover;">
+              <!-- 表コンテンツエリア -->
+            </div>
+            <div class="back" style="background: rgba(0,0,0,0.8);">
+              <!-- 裏コンテンツエリア -->
+              <h2 class="top_hot_title">Japanese Calligraphy</h2>
+              <p class="top_hot_text">
+                you can learn how to write your favorite Japanese character s(kanji) the traditional way and then ......
+              </p>
+              <ul class="top_hot_list">
+                <li class="top_hot_item bg01">
+                  <a href="" class="top_hot_link">Momochihama</a>
+                </li>
+                <li class="top_hot_item bg02">
+                  <a href="" class="top_hot_link">Entertainment</a>
+                </li>
+              </ul>
+              <span class="top_hot_tag">¥2,400</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front" style="background: url(<%= image_url('top/pic02')%>) center center no-repeat;background-size: cover;">
+              <!-- 表コンテンツエリア -->
+            </div>
+            <div class="back" style="background: rgba(0,0,0,0.8);">
+              <!-- 裏コンテンツエリア -->
+              <h2 class="top_hot_title">Japanese Calligraphy</h2>
+              <p class="top_hot_text">
+                you can learn how to write your favorite Japanese character s(kanji) the traditional way and then ......
+              </p>
+              <ul class="top_hot_list">
+                <li class="top_hot_item bg01">
+                  <a href="" class="top_hot_link">Momochihama</a>
+                </li>
+                <li class="top_hot_item bg02">
+                  <a href="" class="top_hot_link">Entertainment</a>
+                </li>
+              </ul>
+              <span class="top_hot_tag">¥2,400</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front" style="background: url(<%= image_url('top/pic03')%>) center center no-repeat;background-size: cover;">
+              <!-- 表コンテンツエリア -->
+            </div>
+            <div class="back" style="background: rgba(0,0,0,0.8);">
+              <!-- 裏コンテンツエリア -->
+              <h2 class="top_hot_title">Japanese Calligraphy</h2>
+              <p class="top_hot_text">
+                you can learn how to write your favorite Japanese character s(kanji) the traditional way and then ......
+              </p>
+              <ul class="top_hot_list">
+                <li class="top_hot_item bg01">
+                  <a href="" class="top_hot_link">Momochihama</a>
+                </li>
+                <li class="top_hot_item bg02">
+                  <a href="" class="top_hot_link">Entertainment</a>
+                </li>
+              </ul>
+              <span class="top_hot_tag">¥2,400</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front" style="background: url(<%= image_url('top/pic04')%>) center center no-repeat;background-size: cover;">
+              <!-- 表コンテンツエリア -->
+            </div>
+            <div class="back" style="background: rgba(0,0,0,0.8);">
+              <!-- 裏コンテンツエリア -->
+              <h2 class="top_hot_title">Japanese Calligraphy</h2>
+              <p class="top_hot_text">
+                you can learn how to write your favorite Japanese character s(kanji) the traditional way and then ......
+              </p>
+              <ul class="top_hot_list">
+                <li class="top_hot_item bg01">
+                  <a href="" class="top_hot_link">Momochihama</a>
+                </li>
+                <li class="top_hot_item bg02">
+                  <a href="" class="top_hot_link">Entertainment</a>
+                </li>
+              </ul>
+              <span class="top_hot_tag">¥2,400</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front" style="background: url(<%= image_url('top/pic05')%>) center center no-repeat;background-size: cover;">
+              <!-- 表コンテンツエリア -->
+            </div>
+            <div class="back" style="background: rgba(0,0,0,0.8);">
+              <!-- 裏コンテンツエリア -->
+              <h2 class="top_hot_title">Japanese Calligraphy</h2>
+              <p class="top_hot_text">
+                you can learn how to write your favorite Japanese character s(kanji) the traditional way and then ......
+              </p>
+              <ul class="top_hot_list">
+                <li class="top_hot_item bg01">
+                  <a href="" class="top_hot_link">Momochihama</a>
+                </li>
+                <li class="top_hot_item bg02">
+                  <a href="" class="top_hot_link">Entertainment</a>
+                </li>
+              </ul>
+              <span class="top_hot_tag">¥2,400</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front" style="background: url(<%= image_url('top/pic06')%>) center center no-repeat;background-size: cover;">
+              <!-- 表コンテンツエリア -->
+            </div>
+            <div class="back" style="background: rgba(0,0,0,0.8);">
+              <!-- 裏コンテンツエリア -->
+              <h2 class="top_hot_title">Japanese Calligraphy</h2>
+              <p class="top_hot_text">
+                you can learn how to write your favorite Japanese character s(kanji) the traditional way and then ......
+              </p>
+              <ul class="top_hot_list">
+                <li class="top_hot_item bg01">
+                  <a href="" class="top_hot_link">Momochihama</a>
+                </li>
+                <li class="top_hot_item bg02">
+                  <a href="" class="top_hot_link">Entertainment</a>
+                </li>
+              </ul>
+              <span class="top_hot_tag">¥2,400</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front" style="background: url(<%= image_url('top/pic07')%>) center center no-repeat;background-size: cover;">
+              <!-- 表コンテンツエリア -->
+            </div>
+            <div class="back" style="background: rgba(0,0,0,0.8);">
+              <!-- 裏コンテンツエリア -->
+              <h2 class="top_hot_title">Japanese Calligraphy</h2>
+              <p class="top_hot_text">
+                you can learn how to write your favorite Japanese character s(kanji) the traditional way and then ......
+              </p>
+              <ul class="top_hot_list">
+                <li class="top_hot_item bg01">
+                  <a href="" class="top_hot_link">Momochihama</a>
+                </li>
+                <li class="top_hot_item bg02">
+                  <a href="" class="top_hot_link">Entertainment</a>
+                </li>
+              </ul>
+              <span class="top_hot_tag">¥2,400</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front" style="background: url(<%= image_url('top/pic01')%>) center center no-repeat;background-size: cover;">
+              <!-- 表コンテンツエリア -->
+            </div>
+            <div class="back" style="background: rgba(0,0,0,0.8);">
+              <!-- 裏コンテンツエリア -->
+              <h2 class="top_hot_title">Japanese Calligraphy</h2>
+              <p class="top_hot_text">
+                you can learn how to write your favorite Japanese character s(kanji) the traditional way and then ......
+              </p>
+              <ul class="top_hot_list">
+                <li class="top_hot_item bg01">
+                  <a href="" class="top_hot_link">Momochihama</a>
+                </li>
+                <li class="top_hot_item bg02">
+                  <a href="" class="top_hot_link">Entertainment</a>
+                </li>
+              </ul>
+              <span class="top_hot_tag">¥2,400</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <a href="" class="common_sp_more">more</a>
+  </section>
+  <section class="top_topics_wrap">
+    <div class="common_inner">
+      <div id="grid" class="main top_common_title">
+        <div class="view">
+          <div class="view-back">
+            <a href="/">more</a>
+          </div>
+          <%= image_tag('top/top_title03')%>
+        </div>
+      </div>
+      <h1 class="top_common_sp_title">
+        <%= image_tag("top/top_title03") %>
+      </h1>
+      <ul class="top_topics_list">
+        <li class="top_topics_item">
+          <a href="" class="top_topics_link">
+            <%= image_tag('common/pin_icon01', class: "pin01")%>
+            <%= image_tag('common/pin_icon02', class: "pin02")%>
+            <p class="date">2017/08/30</p>
+            <p class="text">RHakata City Traditional Noh Play Emaki 2017“Rin”  9/17(Sun)</p>
+          </a>
+        </li>
+        <li class="top_topics_item">
+          <a href="" class="top_topics_link">
+            <%= image_tag('common/pin_icon01', class: "pin01")%>
+            <%= image_tag('common/pin_icon02', class: "pin02")%>
+            <p class="date">2017/08/30</p>
+            <p class="text">We have been featured in Asian Beat, one day trip page!</p>
+          </a>
+        </li>
+        <li class="top_topics_item">
+          <a href="" class="top_topics_link">
+            <%= image_tag('common/pin_icon01', class: "pin01")%>
+            <%= image_tag('common/pin_icon02', class: "pin02")%>
+            <p class="date">2017/08/30</p>
+            <p class="text">Report about the seminar at SUiTO FUKUOKA was uploaded by Fukuoka Tenjin University......</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a href="" class="common_sp_more">more</a>
+  </section>
+  <section class="top_weather_wrap">
+    <div class="common_inner">
+      <div id="grid" class="main top_common_title">
+        <div class="view">
+          <div class="view-back">
+            <a href="/">more</a>
+          </div>
+          <%= image_tag('top/top_title04')%>
+        </div>
+      </div>
+      <h1 class="top_common_sp_title">
+        <%= image_tag('top/top_title04')%>
+      </h1>
+      <div class="top_weather_main">
+        <div class="top_weather_left">
+          <div class="pc">
+            <%= image_tag('common/map', class: "map")%>
+            <%= image_tag('common/pin_icon03', class: "pin", id: "WeatherPin")%>
+          </div>
+          <div class="sp">
+            <%= image_tag('common/map_sp', class: "map_sp")%>
+          </div>
+        </div>
+        <div class="top_weather_right">
+          <!-- API 入れる -->
+        </div>
+      </div>
+    </div>
+    <a href="" class="common_sp_more">more</a>
+  </section>
+  <section class="top_money_wrap">
+    <div class="common_inner">
+      <div id="grid" class="main top_common_title">
+        <div class="view">
+          <div class="view-back">
+            <a href="/">more</a>
+          </div>
+            <%= image_tag('top/top_title05')%>
+        </div>
+      </div>
+      <h1 class="top_common_sp_title">
+        <%= image_tag('top/top_title05')%>
+      </h1>
+      <div class="top_money_main">
+        <div class="top_money_left">
+          <div class="top_money_rate">
+            <p class="top_money_date">2017/10/01</p>
+            <p class="top_money_change_rate">1JPY  ≒  130.77EUR</p>
+          </div>
+          <div class="top_money_change">
+            <div class="top_money_inner">
+              <input type="number" class="top_money_input">
+              <p class="money_type MoneyCountry" id="MoneyOrigin">JPY</p>
+            </div>
+            <%= image_tag('common/change_icon', class: "change_icon", id: "ChangeBtn")%>
+            <div class="top_money_inner">
+              <input type="number" class="top_money_input">
+              <p class="money_type MoneyCountry" id="MoneyChange">EUR</p>
+            </div>
+          </div>
+          <button class="top_money_change_btn">calculate</button>
+        </div>
+        <div class="top_money_right clearfix">
+          <ul class="top_money_list">
+            <li class="top_money_item top_exchange">
+              <p class="top_money_contury" data-contury="USD">
+                <%= image_tag('common/usd', alt: "usd")%>
+              </p>
+            </li>
+            <li class="top_money_item top_exchange">
+              <p class="top_money_contury" data-contury="KRW">
+                <%= image_tag('common/krw', alt: "krw")%>
+              </p>
+            </li>
+            <li class="top_money_item top_exchange">
+              <p class="top_money_contury" data-contury="TWD">
+                <%= image_tag('common/twd', alt: "twd")%>
+              </p>
+            </li>
+            <li class="top_money_item top_exchange active">
+              <p class="top_money_contury" data-contury="EUR">
+                <%= image_tag('common/eur', alt: "eur")%>
+              </p>
+            </li>
+            <li class="top_money_item top_exchange">
+              <p class="top_money_contury" data-contury="CNY">
+                <%= image_tag('common/cny', alt: "cny")%>
+              </p>
+            </li>
+            <li class="top_money_item top_exchange">
+              <p class="top_money_contury" data-contury="THB">
+                <%= image_tag('common/thb', alt: "thb")%>
+              </p>
+            </li>
+            <li class="top_money_item top_exchange">
+              <p class="top_money_contury" data-contury="GBP">
+                <%= image_tag('common/gbp', alt: "gbp")%>
+              </p>
+            </li>
+            <li class="top_money_item top_exchange">
+              <p class="top_money_contury" data-contury="HKD">
+                <%= image_tag('common/hkd', alt: "hkd")%>
+              </p>
+            </li>
+            <li class="top_money_item top_exchange">
+              <p class="top_money_contury" data-contury="AUD">
+                <%= image_tag('common/aud', alt: "aud")%>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="" class="common_sp_more">more</a>
+  </section>
+  <section class="top_blog_wrap">
+    <div class="common_inner">
+      <div id="grid" class="main top_common_title">
+        <div class="view">
+          <div class="view-back">
+            <a href="/blog">more</a>
+          </div>
+          <%= image_tag('top/top_title06')%>
+        </div>
+      </div>
+      <h1 class="top_common_sp_title">
+        <%= image_tag('top/top_title06')%>
+      </h1>
+      <div class="top_blog_main">
+        <article class="top_blog_up">
+          <a href="">
+            <div class="top_blog_pic" style="background: url(<%= image_url('common/sample_pic')%>) center center no-repeat;background-size: cover;"></div>
+            <div class="top_blog_info">
+              <h1 class="top_blog_title">
+                <span>Souvenirs in Hakata station</span>
+              </h1>
+              <div class="top_blog_inner">
+                <div class="left">
+                  <p class="date">2017/08/14</p>
+                  <ul class="top_blog_tag">
+                    <li class="top_blog_tag_item">
+                      <p class="top_blog_tag_link" id="">#Shopping</p>
+                    </li>
+                    <li class="top_blog_tag_item">
+                      <p class="top_blog_tag_link" id="">#Station</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="top_blog_people_pic" style="background: url(<%= image_url('common/sample_people')%>) center center no-repeat;background-size: cover;"></div>
+              </div>
+              <p class="top_blog_text">
+                There are plenty of regular souvenirs but why not taking time to choose something a bit more special? We selected 10 items that you can easily find in the city center. We excluded items that you can immediately find on the internet; at the Airport or at the station......
+              </p>
+            </div>
+          </a>
+        </article>
+        <div class="top_blog_bottom">
+          <div class="top_blog_left">
+            <article class="top_common_blog">
+              <a href="">
+                <div class="top_blog_pic" style="background: url(<%= image_url('common/sample_pic')%>) center center no-repeat;background-size: cover;"></div>
+                <div class="top_blog_info">
+                  <h1 class="top_blog_title">
+                    <span>Souvenirs in Hakata station</span>
+                  </h1>
+                  <div class="top_blog_inner">
+                    <div class="left">
+                      <p class="date">2017/08/14</p>
+                      <ul class="top_blog_tag">
+                        <li class="top_blog_tag_item">
+                          <p class="top_blog_tag_link" id="">#Shopping</p>
+                        </li>
+                        <li class="top_blog_tag_item">
+                          <p class="top_blog_tag_link" id="">#Station</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="top_blog_people_pic" style="background: url(<%= image_url('common/sample_people')%>) center center no-repeat;background-size: cover;"></div>
+                  </div>
+                  <p class="top_blog_text">
+                    There are plenty of regular souvenirs but why not taking time to choose something a bit more special? We selected 10 items that you can easily find in the city center. We excluded items that you can immediately find on the internet; at the Airport or at the station......
+                  </p>
+                </div>
+              </a>
+            </article>
+            <article class="top_common_blog">
+              <a href="">
+                <div class="top_blog_pic" style="background: url(<%= image_url('common/sample_pic')%>) center center no-repeat;background-size: cover;"></div>
+                <div class="top_blog_info">
+                  <h1 class="top_blog_title">
+                    <span>Souvenirs in Hakata station</span>
+                  </h1>
+                  <div class="top_blog_inner">
+                    <div class="left">
+                      <p class="date">2017/08/14</p>
+                      <ul class="top_blog_tag">
+                        <li class="top_blog_tag_item">
+                          <p class="top_blog_tag_link" id="">#Shopping</p>
+                        </li>
+                        <li class="top_blog_tag_item">
+                          <p class="top_blog_tag_link" id="">#Station</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="top_blog_people_pic" style="background: url(<%= image_url('common/sample_people')%>) center center no-repeat;background-size: cover;"></div>
+                  </div>
+                  <p class="top_blog_text">
+                    There are plenty of regular souvenirs but why not taking time to choose something a bit more special? We selected 10 items that you can easily find in the city center. We excluded items that you can immediately find on the internet; at the Airport or at the station......
+                  </p>
+                </div>
+              </a>
+            </article>
+            <p class="common_sp_more">more</p>
+          </div>
+          <div class="top_blog_right">
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fjwebsol%2F&tabs=timeline&width=320&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="common_bottom_pic_block">
+    <%= image_tag('common/bottom_mv_pic')%>
+    <a href="" class="common_bottom_pic_btn"><span>Japanese Restaurant SUiTO</span></a>
+  </section>
+<!--
+  <section class="top_movie_wrap">
+    <div id="TopMovie"></div>
+  </section>
+-->
+</div>
