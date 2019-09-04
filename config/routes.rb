@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'top/index'
+  get 'blog/index'
+  get 'blog/show'
 
-  root 'top#index'
+  root 'top#index', as: 'top'
 end
