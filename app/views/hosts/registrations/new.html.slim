@@ -1,0 +1,52 @@
+.ui.middle.aligned.center.aligned.grid.auth-grid
+  .column.auth-column
+    main.m-main role='main'
+      .g-title.cf
+        .ui.header.auth-header  
+          h2
+            span.big-title 
+              = t('devise.registrations.title')
+    section class='column_1 cf'
+        .g-box.cf
+          .g-box_inner.cf
+            .ui.large.form
+              = form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'form-group bmd-form-group'}) do |f|
+                = devise_error_messages!
+                .ui.stacked.secondary.segment.auth-segment
+                  .form-group.bmd-form-group.log-in-input
+                    br
+                    i.user.icon
+                    label.small-title
+                      = t('devise.registrations.new.name')
+                    br/
+                    .ui.fluid.big.input.focus.auth-input
+                      = f.text_field :name, autofocus: true, placeholder: t('devise.registrations.new.name')
+                  .form-group.bmd-form-group.log-in-input
+                    br
+                    i.mail.icon
+                    label.small-title
+                      = t('devise.sessions.new.email')
+                    br/
+                    .ui.fluid.big.input.focus.auth-input
+                      = f.email_field :email, autofocus: true, placeholder: t('devise.sessions.new.email')
+                  .form-group.bmd-form-group.log-in-input
+                    br
+                    i.phone.icon
+                    label.small-title
+                      = t('devise.registrations.new.phone')
+                    br/
+                    .ui.fluid.big.input.focus.auth-input
+                      = f.number_field :tel, autocomplete: "off", placeholder: t('devise.registrations.new.phone'), :maxlength => 15
+                  span.bmd-form-group.is-filled
+                  .btn_wrap.cf
+                    br
+                    button.ui.fluid.large.primary.button.btn-submit type='submit' 
+                      span#btn-submit-text = t('devise.registrations.signup')
+javascript:
+  $('button').click(function() {
+      $('.ui.form').submit(function() {
+        $('button').removeClass("ui fluid large primary button").addClass("ui primary fluid large loading submit button");
+        $('#btn-submit-text').hide();
+        $('button').attr("disabled", true);
+      })
+    })

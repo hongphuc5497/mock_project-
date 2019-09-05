@@ -39,6 +39,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 
+#constant
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -68,7 +70,7 @@ group :test do
 end
 
 group :production do 
-  gem 'pg', '~> 1.1.4'
+  # gem 'pg', '~> 1.1.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

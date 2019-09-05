@@ -1,0 +1,44 @@
+.ui.middle.aligned.center.aligned.grid.auth-grid
+  .column.auth-column
+    main.m-main[role="main"]
+      .g-title.cf
+        .ui.header.auth-header  
+          h3
+            br
+            br
+            span.big-title#new-pass
+              = t('devise.passwords.title')
+      section.column_1.cf
+        .g-box.cf
+          .g-box_inner.cf
+            .ui.large.form
+              = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :put }) do |f|
+                = devise_error_messages!
+                br
+                .ui.stacked.secondary.segment.auth-segment
+                  = f.hidden_field :confirmation_token
+                  .form-group.log-in-input
+                    br
+                    i.key.icon
+                    label.small-title
+                      = t('devise.sessions.new.password')
+                    .ui.fluid.big.input.focus.auth-input
+                      = f.password_field :password, class: "form-control", id: "label_password", placeholder: t('devise.sessions.new.password'), required: true
+                  .form-group.log-in-input
+                    i.key.icon
+                    label.small-title
+                      = t('devise.sessions.new.password_confirmation')
+                    .ui.fluid.big.input.focus.auth-input
+                      = f.password_field :password_confirmation, class: "form-control", id: "label_password2", placeholder: t('devise.sessions.new.password_confirmation'), required: true
+                    small.form-text.text-danger Passwords are not the same.
+                  .btn_wrap.cf
+                    button.ui.fluid.large.primary.button.btn-submit[type="submit"] 
+                      span#btn-submit-text = t('devise.confirmations.submit')
+javascript:
+    $('button').click(function() {
+      $('.ui.form').submit(function() {
+        $('button').removeClass("ui fluid large primary button").addClass("ui primary fluid large loading submit button");
+        $('#btn-submit-text').hide();
+        $('button').attr("disabled", true);
+      })
+    })

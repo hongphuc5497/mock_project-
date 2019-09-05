@@ -1,0 +1,24 @@
+.ui.middle.aligned.center.aligned.grid.auth-grid
+  .column.auth-column
+    main.m-main[role="main"]
+      .g-title.cf
+        .ui.header.auth-header  
+          h2
+            br
+            br
+            span.big-title
+              = t('devise.registrations.title')
+          br/
+    section.column_1.cf
+      .g-box.cf
+        .g-box_inner.cf
+          .ui.large.form
+            .ui.stacked.secondary.segment.auth-segment
+              .fs1_2.text-center.cf
+                .ui.large.message.auth-message.small-title
+                  = t('devise.confirmations.send_instructions')
+                  br/
+                .btn_wrap.cf
+                  br
+                  = link_to t('goback'), home_index_url, class: 'title-footer'
+                  br

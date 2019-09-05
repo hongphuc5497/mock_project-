@@ -1,0 +1,22 @@
+.ui.middle.aligned.center.aligned.grid.auth-grid
+  .column.auth-column
+    main.m-main[role="main"]
+      .g-title.cf
+        .ui.header.auth-header  
+          h3
+            br
+            br
+            span.big-title#new-pass
+              = t('devise.confirmations.title')
+      section.column_1.cf
+        .g-box.cf
+          .g-box_inner.cf
+            br
+            .ui.large.form
+              .ui.stacked.secondary.segment.auth-segment
+                .fs1_2.text-center.cf
+                  = t('devise.confirmations.send_instructions')
+                  .input-align
+                    .btn_wrap.cf
+                      br
+                      = link_to t('devise.sessions.goback'), new_admin_session_path, class: 'title-footer'

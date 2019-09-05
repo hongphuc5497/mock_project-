@@ -1,0 +1,40 @@
+.ui.middle.aligned.center.aligned.grid.auth-grid
+  .column.auth-column
+    main.m-main[role="main"]
+      .g-title.cf
+        .ui.header.auth-header  
+          h2
+            br
+            br
+            span.big-title
+              = t('devise.passwords.title')            
+        section.column_1.cf
+          .g-box.cf
+            .g-box_inner.cf     
+              .ui.large.form          
+                = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+                  = devise_error_messages!
+                  br
+                  .ui.stacked.secondary.segment.auth-segment
+                    .description
+                      = t('devise.passwords.send_instructions')
+                    br
+                    .form-group.log-in-input
+                      i.mail.icon
+                      label.small-title
+                        = t('devise.sessions.new.email')
+                      br/
+                      .ui.fluid.big.input.focus.auth-input
+                        = f.email_field :email, id: "label_mail", placeholder: "", required: true
+                      small.form-text.text-danger Your email has been registered.
+                    .btn_wrap.cf
+                      button.ui.fluid.large.primary.button.btn-submit[type="submit"] 
+                        span#btn-submit-text = t('devise.passwords.reset_password')
+javascript:
+  $('button').click(function() {
+    $('.ui.form').submit(function() {
+      $('button').removeClass("ui fluid large primary button").addClass("ui primary fluid large loading button");
+      $('#btn-submit-text').hide();
+      $('button').attr("disabled", true);
+    })
+  })

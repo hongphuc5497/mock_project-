@@ -1,0 +1,39 @@
+.ui.middle.aligned.center.aligned.grid.auth-grid
+  .column.auth-column
+    main.m-main[role="main"]
+      .g-title.cf
+        .ui.header.auth-header  
+          h3
+            br
+            br
+            span.big-title#new-pass
+              = t('devise.confirmations.title')
+      section.column_1.cf
+        .g-box.cf
+          .g-box_inner.cf
+            .ui.large.form
+              = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+                = devise_error_messages!
+                br
+                .ui.stacked.secondary.segment.auth-segment
+                  .form-group.log-in-input
+                    br
+                    i.mail.icon
+                    label.small-title
+                      = t('devise.sessions.new.email')
+                    br/
+                    .ui.fluid.big.input.focus.auth-input
+                      = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-custom", placeholder: t('devise.sessions.new.email'), required: true
+                    small.form-text.text-danger
+                  .btn_wrap.cf
+                    br
+                    button.ui.fluid.large.primary.button.btn-submit[type="submit"] 
+                      span#btn-frm-submit = t('devise.confirmations.submit')
+javascript:
+ $('.btn_wrap.cf').click(function() {            
+      $('.ui.form').submit(function() {
+        $('button').removeClass('ui fluid large primary button btn-submit').addClass('ui primary fluid large loading submit button btn-loading');
+        $('#btn-frm-submit').hide();  
+        $('button').attr("disabled", true);
+      })     
+    })

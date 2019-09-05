@@ -1,0 +1,27 @@
+main role='main'
+  header class='row f-align-items-center mt1 cf'
+    h1 class='col-7 col-md-9 main_title' DASHBOARD
+  header class='u-mypage-user-name'
+    .u-inner
+      p class='name' #{ current_host.email }
+      span class='user-id' (USER ID： #{current_host.id})
+  .u-mypage.cf
+    .u-mypage-manu.cf
+      .u-manu-items.cf
+        a href="#{}"
+          i class='material-icons' person_outline
+          .u-menu-text
+            span.u-title Profile
+            span.u-description Profile
+      .u-manu-items.cf
+        a href="#{new_hosts_product_path}"
+          i class='material-icons' playlist_add
+          .u-menu-text
+            span.u-title Create Product
+            span.u-description Create Product....
+      .u-manu-items.cf
+        a href="#{hosts_products_path}"
+          i class='material-icons' list
+          .u-menu-text
+            span.u-title Product Manager
+            span.u-description Product Manager....

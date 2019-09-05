@@ -1,0 +1,25 @@
+.ui.middle.aligned.center.aligned.grid.auth-grid
+  .column.auth-column
+    main.m-main[role="main"]
+      .g-title.cf
+        .ui.header.auth-header  
+          h3
+            br
+            br
+            span.big-title#new-pass Resend unlock instructions
+        .ui.large.form
+          br
+          .ui.stacked.secondary.segment.auth-segment
+            = simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+              = f.error_notification
+              = f.full_error :unlock_token
+              .form-inputs.log-in-input
+                br
+                i.mail.icon
+                = f.label :email, :class => "small-title"
+                br/
+                .ui.fluid.big.input.focus.auth-input
+                  = f.input :email, required: true, autofocus: true
+              .form-actions.log-in-input
+                = f.button :submit, "Resend unlock instructions", class: "ui fluid large primary button"
+            = render "hosts/shared/links"
