@@ -10,11 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_031357) do
+ActiveRecord::Schema.define(version: 2019_09_05_031218) do
 
   create_table "blog_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "blog_id"
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["blog_id"], name: "index_blog_details_on_blog_id"
   end
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -23,13 +27,14 @@ ActiveRecord::Schema.define(version: 2019_09_05_031357) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "category_name"
   end
 
   create_table "hashtags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "blog_id"
+    t.bigint "tag_id"
+    t.index ["blog_id"], name: "index_hashtags_on_blog_id"
+    t.index ["tag_id"], name: "index_hashtags_on_tag_id"
   end
 
   create_table "impressions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -59,18 +64,22 @@ ActiveRecord::Schema.define(version: 2019_09_05_031357) do
   end
 
   create_table "locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "province"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "relative_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "blog_id"
+    t.bigint "category_id"
+    t.index ["blog_id"], name: "index_relative_categories_on_blog_id"
+    t.index ["category_id"], name: "index_relative_categories_on_category_id"
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "tag_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
