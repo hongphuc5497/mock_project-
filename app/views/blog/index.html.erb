@@ -4,7 +4,7 @@
       <div class="">
         <h1 class="ex_main_title">
 	        Blog
-          <img src="static/images/common/spring_icon.png" alt="find things to do in Fukuoka">
+          <%= image_tag("common/spring_icon.png", alt: "find things to do in Fukuoka") %>
         </h1>
         <div class="pankuzu_wrap">
           <div class="common_inner">
@@ -22,7 +22,7 @@
         <div class="ex_main_block">
           <div class="ex_main_block_inner">
             <div class="ex_main_left">
-              <div class="ex_main_pic" style="background: url(static/images/ex/sample_pic.jpg) center center no-repeat;background-size: cover;">
+              <div class="ex_main_pic" style="background: url(<%= image_url("ex/sample_pic") %>) center center no-repeat;background-size: cover;">
                 <span class="blog_main_left_tag">Gourmet</span>
                 <div class="blog_main_center_block">
 	                <h2 class="title"><a href="">Hakata Ramen - ikkousha -</a></h2>
@@ -44,11 +44,11 @@
 			                	</a>
 			                </li>
 		                </ul>
-		                <div class="people" style="background: url(static/images/common/sample_pic.jpg) center center no-repeat;background-size: cover;"></div>
+		                <div class="people" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;"></div>
 	                </div>
                 </div>
                 <span class="blog_main_place_tag">
-                	<img src="static/images/common/place_icon_w.png">
+                	<%= image_tag("common/place_icon_w.png") %>
                 	<a href="">Momochihama</a>
                 </span>
               </div>
@@ -106,7 +106,7 @@
           <ul class="ex_list_up_pager">
             <li class="ex_list_up_pager_item">
               <a href="" class="prev">
-                <img src="static/images/ex/left_icon01.png">
+                <%= image_tag("ex/left_icon01.png") %>
               </a>
             </li>
             <li class="ex_list_up_pager_item">
@@ -134,7 +134,7 @@
             </li>
             <li class="ex_list_up_pager_item">
               <a href="" class="next">
-                <img src="static/images/ex/right_icon01.png">
+                <%= image_tag("ex/right_icon01.png") %>
               </a>
             </li>
           </ul>
@@ -142,9 +142,9 @@
         <section class="blog_ranking_wrap clearfix">
 	        <article class="blog_ranking_block">
 		        <a href="" class="link clearfix">
-			        <img src="static/images/blog/rank_icon01.png" class="num_pic">
+			        <%= image_tag("blog/rank_icon01.png", class: "num_pic") %>
 			        <div class="right">
-				        <div class="pic" style="background: url(static/images/common/sample_pic.jpg) center center no-repeat;background-size: cover;">
+				        <div class="pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 					        <span class="tag">Culture</span>
 				        </div>
 				        <h1 class="title">Souvenirs in Hakata station</h1>
@@ -153,9 +153,9 @@
 	        </article>
 	        <article class="blog_ranking_block">
 		        <a href="" class="link clearfix">
-			        <img src="static/images/blog/rank_icon02.png" class="num_pic">
+			        <%= image_tag("blog/rank_icon02.png", class: "num_pic") %>
 			        <div class="right">
-				        <div class="pic" style="background: url(static/images/common/sample_pic.jpg) center center no-repeat;background-size: cover;">
+				        <div class="pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 					        <span class="tag">Culture</span>
 				        </div>
 				        <h1 class="title">Souvenirs in Hakata station</h1>
@@ -164,9 +164,9 @@
 	        </article>
 	        <article class="blog_ranking_block">
 		        <a href="" class="link clearfix">
-			        <img src="static/images/blog/rank_icon03.png" class="num_pic">
+			        <%= image_tag("blog/rank_icon03.png", class: "num_pic") %>
 			        <div class="right">
-				        <div class="pic" style="background: url(static/images/common/sample_pic.jpg) center center no-repeat;background-size: cover;">
+				        <div class="pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 					        <span class="tag">Culture</span>
 				        </div>
 				        <h1 class="title">Souvenirs in Hakata station</h1>
@@ -178,7 +178,7 @@
         
         <section class="blog_main_wrap">
 	      	<article class="blog_common_block clearfix">
-		      	<a href="" class="blog_pic" style="background: url(static/images/common/sample_pic.jpg) center center no-repeat;background-size: cover;">
+		      	<a href="" class="blog_pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 			      	<span class="tag">Shopping</span>
 		      	</a>
 		      	<div class="right">
@@ -191,7 +191,7 @@
 			      	</a>
 			      	<div class="bottom">
 				      	<p class="place">
-					      	<img src="static/images/common/place_icon.png">
+					      	<%= image_tag("common/place_icon.png") %>
 					      	<a href="">Momochihama</a>
 				      	</p>
 				      	<ul class="tag_list">
@@ -214,12 +214,12 @@
 			      	</div>
 		      	</div>
 		      	<div class="people_area">
-			      	<div class="pic BlogPeople" style="background: url(static/images/common/sample_people.png) center center no-repeat;background-size: cover;"></div>
+			      	<div class="pic BlogPeople" style="background: url(<%= image_url("common/sample_people.png") %>) center center no-repeat;background-size: cover;"></div>
 			      	<span class="talk">No Ramen, No Life!  by youyou</span>
 		      	</div>
 	      	</article>
 	      	<article class="blog_common_block clearfix">
-		      	<a href="" class="blog_pic" style="background: url(static/images/common/sample_pic.jpg) center center no-repeat;background-size: cover;">
+		      	<a href="" class="blog_pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 			      	<span class="tag">Shopping</span>
 		      	</a>
 		      	<div class="right">
@@ -232,7 +232,7 @@
 			      	</a>
 			      	<div class="bottom">
 				      	<p class="place">
-					      	<img src="static/images/common/place_icon.png">
+					      	<%= image_tag("common/place_icon.png") %>
 					      	<a href="">Momochihama</a>
 				      	</p>
 				      	<ul class="tag_list">
@@ -255,12 +255,12 @@
 			      	</div>
 		      	</div>
 		      	<div class="people_area">
-			      	<div class="pic BlogPeople" style="background: url(static/images/common/sample_people.png) center center no-repeat;background-size: cover;"></div>
+			      	<div class="pic BlogPeople" style="background: url(<%= image_url("common/sample_people.png") %>) center center no-repeat;background-size: cover;"></div>
 			      	<span class="talk">No Ramen, No Life!  by youyou</span>
 		      	</div>
 	      	</article>
 	      	<article class="blog_common_block clearfix">
-		      	<a href="" class="blog_pic" style="background: url(static/images/common/sample_pic.jpg) center center no-repeat;background-size: cover;">
+		      	<a href="" class="blog_pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 			      	<span class="tag">Shopping</span>
 		      	</a>
 		      	<div class="right">
@@ -273,7 +273,7 @@
 			      	</a>
 			      	<div class="bottom">
 				      	<p class="place">
-					      	<img src="static/images/common/place_icon.png">
+					      	<%= image_tag("common/place_icon.png") %>
 					      	<a href="">Momochihama</a>
 				      	</p>
 				      	<ul class="tag_list">
@@ -296,7 +296,7 @@
 			      	</div>
 		      	</div>
 		      	<div class="people_area">
-			      	<div class="pic BlogPeople" style="background: url(static/images/common/sample_people.png) center center no-repeat;background-size: cover;"></div>
+			      	<div class="pic BlogPeople" style="background: url(<%= image_url("common/sample_people.png") %>) center center no-repeat;background-size: cover;"></div>
 			      	<span class="talk">No Ramen, No Life!  by youyou</span>
 		      	</div>
 	      	</article>  
@@ -305,7 +305,7 @@
         <ul class="ex_list_up_pager bottom">
           <li class="ex_list_up_pager_item">
             <a href="" class="prev">
-              <img src="static/images/ex/left_icon02.jpg">
+              <%= image_tag("ex/left_icon02.jpg") %>
             </a>
           </li>
           <li class="ex_list_up_pager_item">
@@ -333,7 +333,7 @@
           </li>
           <li class="ex_list_up_pager_item">
             <a href="" class="next">
-              <img src="static/images/ex/right_icon02.png">
+              <%= image_tag("ex/right_icon02.png") %>
             </a>
           </li>
         </ul>
@@ -345,115 +345,7 @@
 -->
     </div>
     <section class="common_bottom_pic_block">
-      <img src="static/images/common/bottom_mv_pic.jpg">
+      <%= image_tag("common/bottom_mv_pic.jpg") %>
       <a href="" class="common_bottom_pic_btn"><span>Japanese Restaurant SUiTO</span></a>
     </section>
-  </div>
-  <div class="top_sns_wrap">
-	  <div class="top_sns_inner">
-		  <div class="share-button">
-		    <div class="share-button-secondary">
-		      <div class="share-button-secondary-content">
-		        share on facebook
-		      </div>
-		    </div>
-		    <div class="share-button-primary">
-		      <img src="static/images/common/side_fb.png">
-		    </div>
-		  </div>
-		  <div class="share-button clearfix">
-		    <div class="share-button-secondary">
-		      <div class="share-button-secondary-content">
-		        share on instagram
-		      </div>
-		    </div>
-		    <div class="share-button-primary">
-		      <img src="static/images/common/side_insta.png">
-		    </div>
-		  </div>
-		  <div class="share-button">
-		    <div class="share-button-secondary">
-		      <div class="share-button-secondary-content">
-		        share on twitter
-		      </div>
-		    </div>
-		    <div class="share-button-primary">
-		      <img src="static/images/common/side_twitter.png">
-		    </div>		
-		  </div>
-		  <div class="change_btn_block">
-			  <p class="change_btn" id="SideChangeBtn">
-				  <img src="static/images/common/side_change.png">
-			  </p>
-			  <div class="side_change_money">
-			  	<div class="top_money_left sp">
-	          <div class="top_money_rate sp">
-	            <p class="top_money_date sp">2017/10/01</p>
-	            <p class="top_money_change_rate sp">1JPY  ≒  130.77EUR</p>
-	          </div>
-	          <div class="top_money_change sp">
-	            <div class="top_money_inner sp">
-	              <input type="text" class="top_money_input sp">
-	              <p class="money_type SideMoneyCountry sp" id="SideMoneyOrigin">JPY</p>
-	            </div>
-	            <img src="static/images/common/change_icon.png" class="change_icon sp" id="SideExChangeBtn">
-	            <div class="top_money_inner sp">
-	              <input type="text" class="top_money_input sp">
-	              <p class="money_type SideMoneyCountry sp" id="SideMoneyChange">EUR</p>
-	            </div>
-	          </div>
-	          <button class="top_money_change_btn sp">calculate</button>
-	        </div>
-	        <div class="top_money_right sp clearfix">
-	          <ul class="top_money_list sp">
-	            <li class="top_money_item side_exchange">
-	              <p class="top_money_contury" data-contury="USD">
-	                <img src="static/images/common/usd.png" alt="usd">
-	              </p>
-	            </li>
-	            <li class="top_money_item side_exchange">
-	              <p class="top_money_contury" data-contury="KRW">
-	                <img src="static/images/common/krw.png" alt="krw">
-	              </p>
-	            </li>
-	            <li class="top_money_item side_exchange">
-	              <p class="top_money_contury" data-contury="TWD">
-	                <img src="static/images/common/twd.png" alt="twd">
-	              </p>
-	            </li>
-	            <li class="top_money_item active side_exchange">
-	              <p class="top_money_contury" data-contury="EUR">
-	                <img src="static/images/common/eur.png" alt="eur">
-	              </p>
-	            </li>
-	            <li class="top_money_item side_exchange">
-	              <p class="top_money_contury" data-contury="CNY">
-	                <img src="static/images/common/cny.png" alt="cny">
-	              </p>
-	            </li>
-	            <li class="top_money_item side_exchange">
-	              <p class="top_money_contury" data-contury="THB">
-	                <img src="static/images/common/thb.png" alt="thb">
-	              </p>
-	            </li>
-	            <li class="top_money_item side_exchange">
-	              <p class="top_money_contury" data-contury="GBP">
-	                <img src="static/images/common/gbp.png" alt="gbp">
-	              </p>
-	            </li>
-	            <li class="top_money_item side_exchange">
-	              <p class="top_money_contury" data-contury="HKD">
-	                <img src="static/images/common/hkd.png" alt="hkd">
-	              </p>
-	            </li>
-	            <li class="top_money_item side_exchange">
-	              <p class="top_money_contury" data-contury="AUD">
-	                <img src="static/images/common/aud.png" alt="aud">
-	              </p>
-	            </li>
-	          </ul>
-	        </div>
-		  	</div>
-		  </div>
-	  </div>
   </div>
