@@ -36,7 +36,8 @@ gem 'impressionist'
 gem 'ransack'
 gem 'social-share-button'
 gem 'uglifier', '>= 1.3.0'
-gem 'will_paginate', '~> 3.1'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
