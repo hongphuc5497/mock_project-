@@ -1,0 +1,2 @@
+class RelativeCategory < ApplicationRecord
+end
