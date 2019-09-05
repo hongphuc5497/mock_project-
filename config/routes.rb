@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :hosts
+  
   root 'top#index', as: 'top'
 
   #middleware for pages
