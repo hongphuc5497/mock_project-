@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'blog/index'
-  get 'blog/show'
+  resources :blog, only: %i[index show]
 
   root 'top#index', as: 'top'
 end
