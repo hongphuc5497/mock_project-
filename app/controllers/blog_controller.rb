@@ -2,15 +2,43 @@ class BlogController < ApplicationController
   impressionist 
 
   def index
-    add_breadcrumb 'Blog', :blog_index_path 
+    add_breadcrumb 'Blog', :blog_index_path
 
-    @blogs = Blog.all
+    @blogs      = Blog.all.order(created_at: :DESC).page(params[:page]).per(3)
+    @blog_first = Blog.all.order(created_at: :DESC).first 
+    @blog_count = Blog.count
+    @page       = params[:pagenum].to_i
+
+    @blog_impression_1 = Blog.all.order(impressions_count: :DESC).first  
+    @blog_impression_2 = Blog.all.order(impressions_count: :DESC).second
+    @blog_impression_3 = Blog.all.order(impressions_count: :DESC).third
+
+    @categories = Category.all
+    @locations  = Location.all
+
+    @search       = Blog.ransack(params[:q])
+    @search.sorts = 'blog_details.title desc' if @search.sorts.empty?
+    @blogs        = @search.result(distinct: true).order(created_at: :DESC).page(params[:page]).per(3)
+
+    respond_to do |format| 
+      format.html
+      format.json { render json: @blogs }
+    end 
   end
 
   def show
+    add_breadcrumb 'Blog',                  :blog_index_path
+    add_breadcrumb @blog.blog_detail.title, :blog_path 
+
     @blog = Blog.find(params[:id])
 
-    add_breadcrumb 'Blog',                  :blog_show_path
-    add_breadcrumb @blog.blog_detail.title, :blog_path 
+    @blog_impression_1 = Blog.all.order(impressions_count: :DESC).first  
+    @blog_impression_2 = Blog.all.order(impressions_count: :DESC).second
+    @blog_impression_3 = Blog.all.order(impressions_count: :DESC).third
+  end
+
+  def search 
+    index 
+    render :index
   end
 end
