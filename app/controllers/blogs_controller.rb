@@ -1,8 +1,8 @@
-class BlogController < ApplicationController
+class BlogsController < ApplicationController
   impressionist 
 
   def index
-    add_breadcrumb 'Blog', :blog_index_path
+    add_breadcrumb 'Blogs', :blogs_path
 
     @blogs      = Blog.all.order(created_at: :DESC).page(params[:page]).per(3)
     @blog_first = Blog.all.order(created_at: :DESC).first 
@@ -15,7 +15,7 @@ class BlogController < ApplicationController
 
     @categories = Category.all
     @locations  = Location.all
-
+    
     @search       = Blog.ransack(params[:q])
     @search.sorts = 'blog_details.title desc' if @search.sorts.empty?
     @blogs        = @search.result(distinct: true).order(created_at: :DESC).page(params[:page]).per(3)
@@ -26,19 +26,18 @@ class BlogController < ApplicationController
     end 
   end
 
-  def show
-    add_breadcrumb 'Blog',                  :blog_index_path
-    add_breadcrumb @blog.blog_detail.title, :blog_path 
+  # def show
+  #   add_breadcrumb 'Blog',                   :blogs_path
+  #   add_breadcrumb @blogs.blog_detail.title, :blog_path
 
-    @blog = Blog.find(params[:id])
+  #   @blog = Blog.find(params[:id])
 
-    @blog_impression_1 = Blog.all.order(impressions_count: :DESC).first  
-    @blog_impression_2 = Blog.all.order(impressions_count: :DESC).second
-    @blog_impression_3 = Blog.all.order(impressions_count: :DESC).third
-  end
+  #   @blog_impression_1 = Blog.all.order(impressions_count: :DESC).first  
+  #   @blog_impression_2 = Blog.all.order(impressions_count: :DESC).second
+  #   @blog_impression_3 = Blog.all.order(impressions_count: :DESC).third
+  # end
 
-  def search 
-    index 
-    render :index
-  end
+  # def search 
+  #   render :index
+  # end
 end
