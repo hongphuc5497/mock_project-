@@ -3,47 +3,41 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4'
-# Use Puma as the app server
-gem 'puma', '~> 3.11'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-gem 'devise'
-gem 'cancancan'
-gem 'breadcrumbs_on_rails'
-gem 'bootstrap', '~> 4.3', '>= 4.3.1'
-gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
-gem 'jquery-rails'
-gem 'momentjs-rails'
-gem 'bootstrap-daterangepicker-rails'
-gem 'bxslider-rails'
-gem 'compass-rails'
-gem 'impressionist'
-gem 'ransack'
-gem 'social-share-button'
-gem 'uglifier', '>= 1.3.0'
-gem 'kaminari'
-gem 'bootstrap4-kaminari-views'
-
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'rails', '~> 6.0.0'   						# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'mysql2', '>= 0.4.4'  						# Use mysql as the database for Active Record
+gem 'puma', '~> 3.11'     						# Use Puma as the app server
+gem 'webpacker', '~> 4.0' 						# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'turbolinks', '~> 5'  						# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'jquery-turbolinks'							# Jquery Turbolink support 
+gem 'jbuilder', '~> 2.7'  						# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'devise'              						# Login 
+gem 'cancancan'           						# Authorization 
+gem 'breadcrumbs_on_rails'						# Create breadcrumbs 
+gem 'bootstrap', '~> 4.3', '>= 4.3.1'			# \
+gem 'sass-rails', '~> 5' 						# \
+gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'		# \ 
+gem 'jquery-rails'								# \
+gem 'momentjs-rails'							#  Use SCSS for stylesheets
+gem 'bootstrap-daterangepicker-rails'			# |
+gem 'bxslider-rails'							# |
+gem 'bootstrap-datepicker-rails'				# | 
+gem 'compass-rails'								# |
+gem 'font-awesome-rails'						# Fontawesome for UI
+gem 'ransack' 									# Searching
+gem 'impressionist'								# View count 
+gem 'uglifier', '>= 1.3.0'						# As compressor for JavaScript assets
+gem 'kaminari'									# Pagination
+gem 'bootstrap4-kaminari-views'					# |
+gem 'i18n'										# Multi language 
+gem 'coffee-rails'								# For .coffee assets and views
+gem 'gon' 										# Passing data to javascript 
+gem 'social-share-button'						# Sharing Facebook, instagram, twitter,...
+gem 'shareable'									# |
+gem 'bootsnap', '>= 1.4.2', require: false 		# Reduces boot times through caching; required in config/boot.rb
+gem 'forecast_io'								# For weather 
+gem 'ckeditor'									# \
+gem 'paperclip'									#  For edit blog 
+gem 'mini_magick'								# |
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -73,4 +67,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
