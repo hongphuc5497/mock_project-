@@ -2,8 +2,6 @@ class BlogsController < ApplicationController
   impressionist 
 
   def index
-    add_breadcrumb 'Blogs', :blogs_path
-
     @blogs      = Blog.all.order(created_at: :DESC).page(params[:page]).per(3)
     @blog_first = Blog.all.order(created_at: :DESC).first 
     @blog_count = Blog.count
@@ -24,20 +22,18 @@ class BlogsController < ApplicationController
       format.html
       format.json { render json: @blogs }
     end 
+
+    add_breadcrumb 'Blogs', :blogs_path
   end
 
-  # def show
-  #   add_breadcrumb 'Blog',                   :blogs_path
-  #   add_breadcrumb @blogs.blog_detail.title, :blog_path
+  def show
+    @blog  = Blog.find(params[:id])
 
-  #   @blog = Blog.find(params[:id])
+    @blog_impression_1 = Blog.all.order(impressions_count: :DESC).first  
+    @blog_impression_2 = Blog.all.order(impressions_count: :DESC).second
+    @blog_impression_3 = Blog.all.order(impressions_count: :DESC).third
 
-  #   @blog_impression_1 = Blog.all.order(impressions_count: :DESC).first  
-  #   @blog_impression_2 = Blog.all.order(impressions_count: :DESC).second
-  #   @blog_impression_3 = Blog.all.order(impressions_count: :DESC).third
-  # end
-
-  # def search 
-  #   render :index
-  # end
+    add_breadcrumb 'Blog',                   :blogs_path
+    add_breadcrumb @blog.blog_detail.title,  :blog_path
+  end
 end
