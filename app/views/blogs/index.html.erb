@@ -102,13 +102,13 @@
 			        <%= image_tag("blog/rank_icon01.png", class: "num_pic") %>
 			        <div class="right">
 				        <div class="pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
-					        <span clainss="tag">
+					        <span class="tag">
 										<% @blog_impression_1.categories.each do |category| %>
 											<%= category.category_name %>
 										<% end %>
 									</span>
 				        </div>
-				        <h1 class="title"><%= @blog_impression_1.blog_detail.title %></h1>
+				        <h1 class="title"><%= @blog_impression_2.blog_detail.title %></h1>
 			        </div>
 		        </a>
 	        </article>

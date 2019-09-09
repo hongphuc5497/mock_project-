@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_101802) do
+ActiveRecord::Schema.define(version: 2019_09_09_031725) do
 
   create_table "blog_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "blog_id"
     t.string "title"
+    t.text "description"
     t.text "content"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,6 +32,25 @@ ActiveRecord::Schema.define(version: 2019_09_05_101802) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "category_name"
+  end
+
+  create_table "experience_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "experience_id"
+    t.decimal "price_adult", precision: 10
+    t.decimal "price_children", precision: 10
+    t.decimal "price_infant", precision: 10
+    t.string "duration"
+    t.string "age"
+    t.string "language"
+    t.string "title"
+    t.text "description"
+    t.text "content"
+    t.index ["experience_id"], name: "index_experience_details_on_experience_id"
+  end
+
+  create_table "experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "location_id"
+    t.index ["location_id"], name: "index_experiences_on_location_id"
   end
 
   create_table "hashtags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -97,4 +117,5 @@ ActiveRecord::Schema.define(version: 2019_09_05_101802) do
     t.datetime "updated_at"
   end
 
+  add_foreign_key "experiences", "locations"
 end
