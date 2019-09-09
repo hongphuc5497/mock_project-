@@ -151,7 +151,7 @@
 						<article class="blog_common_block clearfix">
 							<a href="" class="blog_pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 								<span class="tag">
-									<%= blog.categories.each do |category| %>
+									<% blog.categories.each do |category| %>
 										<%= category.category_name %>
 									<% end %>	
 								</span>
@@ -160,9 +160,11 @@
 							<div class="right">
 								<a href="" class="blog_main_link">
 									<h1 class="title"><%= link_to blog.blog_detail.title, blog %></h1>
+
 									<p class="text">
 										<%= blog.blog_detail.content %>
 									</p>
+
 									<p class="date"><%= blog.blog_detail.updated_at %></p>
 								</a>
 
@@ -171,6 +173,7 @@
 										<%= image_tag("common/place_icon.png") %>
 										<a href=""><%= blog.location.province %></a>
 									</p>
+
 									<ul class="tag_list">
 										<% blog.tags.each do |tag| %>
 											<li>
