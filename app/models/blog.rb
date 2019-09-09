@@ -4,11 +4,17 @@ class Blog < ApplicationRecord
 
   belongs_to :location
 
-  has_one  :blog_detail 
+  has_one          :blog_detail 
+  has_one_attached :image
 
-  has_many :hashtags
-  has_many :tags,       through: :hashtags
+  has_many :hashtags 
+  has_many :tags, -> { distinct }, through: :hashtags
+  accepts_nested_attributes_for :hashtags, allow_destroy: true
 
   has_many :relative_categories 
-  has_many :categories, through: :relative_categories
+  has_many :categories, -> { distinct }, through: :relative_categories
+  accepts_nested_attributes_for :relative_categories, allow_destroy: true 
+
+  validates :title, :description, :content, presence: true
+  validates :title, uniqueness: true, length: { maximum: 50 }
 end
