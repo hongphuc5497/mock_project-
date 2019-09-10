@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_080349) do
+ActiveRecord::Schema.define(version: 2019_09_10_084137) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -80,8 +80,10 @@ ActiveRecord::Schema.define(version: 2019_09_10_080349) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "location_id", null: false
     t.bigint "host_id", null: false
+    t.bigint "relative_categories_id", null: false
     t.index ["host_id"], name: "index_experiences_on_host_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
+    t.index ["relative_categories_id"], name: "index_experiences_on_relative_categories_id"
   end
 
   create_table "hashtags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -157,6 +159,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_080349) do
   add_foreign_key "experience_details", "experiences"
   add_foreign_key "experiences", "hosts"
   add_foreign_key "experiences", "locations"
+  add_foreign_key "experiences", "relative_categories", column: "relative_categories_id"
   add_foreign_key "hashtags", "tags"
   add_foreign_key "relative_categories", "categories"
 end

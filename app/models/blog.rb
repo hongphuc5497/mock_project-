@@ -3,6 +3,7 @@ class Blog < ApplicationRecord
   has_many :impressions, as: :impressionable
 
   belongs_to :location
+  belongs_to :host, optional: true 
 
   has_one          :blog_detail 
   has_one_attached :image
