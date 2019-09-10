@@ -2,11 +2,11 @@ class CreateExperiences < ActiveRecord::Migration[6.0]
   def change
     create_table :experiences do |t|
 
-      t.belongs_to :location, foreign_key: true
+      t.timestamps
     end
 
     create_table :experience_details do |t|
-      t.belongs_to :experience, index: true
+      t.belongs_to :experience, index: true, foreign_key: true
       t.decimal :price_adult
       t.decimal :price_children
       t.decimal :price_infant

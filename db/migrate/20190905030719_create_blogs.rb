@@ -2,11 +2,11 @@ class CreateBlogs < ActiveRecord::Migration[6.0]
   def change
     create_table :blogs do |t|
 
-      t.belongs_to :location, foreign_key: true
+      t.timestamps
     end
 
     create_table :blog_details do |t|
-      t.belongs_to :blog, index: true
+      t.belongs_to :blog, index: true, foreign_key: true
       t.string :title
       t.text :description
       t.text :content
