@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    Meow Meow Meow
+  </title>
+  <!-- Favicon -->
+  <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <%= stylesheet_link_tag 'host_application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <%= render 'templates/hosts/nav_left'%>
+  <div class="main-content">
+    <%= render 'templates/hosts/header'%>
+    <%= yield %>
+    <%= render 'templates/hosts/footer'%>
+  </div>
+
+  <%= javascript_include_tag 'host_application', 'data-turbolinks-track': 'reload' %>
+    
+  <script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "argon-dashboard-free"
+      });
+  </script>
+</body>
+</html>

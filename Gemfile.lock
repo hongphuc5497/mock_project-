@@ -206,7 +206,6 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    pg (1.1.4)
     polyamorous (2.3.0)
       activerecord (>= 5.0)
     popper_js (1.14.5)
@@ -362,7 +361,6 @@ DEPENDENCIES
   momentjs-rails
   mysql2 (>= 0.4.4)
   paperclip
-  pg (~> 1.1.4)
   puma (~> 3.11)
   rails (~> 6.0.0)
   ransack
