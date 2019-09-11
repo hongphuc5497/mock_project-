@@ -11,8 +11,6 @@ module MockProject
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    config.active_record.belongs_to_required_by_default = true 
-
     config.assets.paths << Rails.root.join('app', 'assets', 'images')
 
     Dir.glob("#{Rails.root}/app/assets/images/**/").each do |path|
