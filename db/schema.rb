@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_084137) do
+ActiveRecord::Schema.define(version: 2019_09_11_041547) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -48,13 +48,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_084137) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "impressions_count", default: 0
     t.bigint "location_id", null: false
-    t.bigint "hashtags_id", null: false
-    t.bigint "relative_categories_id", null: false
-    t.bigint "host_id", null: false
-    t.index ["hashtags_id"], name: "index_blogs_on_hashtags_id"
-    t.index ["host_id"], name: "index_blogs_on_host_id"
     t.index ["location_id"], name: "index_blogs_on_location_id"
-    t.index ["relative_categories_id"], name: "index_blogs_on_relative_categories_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -79,17 +73,15 @@ ActiveRecord::Schema.define(version: 2019_09_10_084137) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "location_id", null: false
-    t.bigint "host_id", null: false
-    t.bigint "relative_categories_id", null: false
-    t.index ["host_id"], name: "index_experiences_on_host_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
-    t.index ["relative_categories_id"], name: "index_experiences_on_relative_categories_id"
   end
 
   create_table "hashtags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "tag_id", null: false
+    t.bigint "blog_id", null: false
+    t.index ["blog_id"], name: "index_hashtags_on_blog_id"
     t.index ["tag_id"], name: "index_hashtags_on_tag_id"
   end
 
@@ -141,7 +133,11 @@ ActiveRecord::Schema.define(version: 2019_09_10_084137) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
+    t.bigint "blog_id", null: false
+    t.bigint "experience_id", null: false
+    t.index ["blog_id"], name: "index_relative_categories_on_blog_id"
     t.index ["category_id"], name: "index_relative_categories_on_category_id"
+    t.index ["experience_id"], name: "index_relative_categories_on_experience_id"
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -152,14 +148,12 @@ ActiveRecord::Schema.define(version: 2019_09_10_084137) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "blog_details", "blogs"
-  add_foreign_key "blogs", "hashtags", column: "hashtags_id"
-  add_foreign_key "blogs", "hosts"
   add_foreign_key "blogs", "locations"
-  add_foreign_key "blogs", "relative_categories", column: "relative_categories_id"
   add_foreign_key "experience_details", "experiences"
-  add_foreign_key "experiences", "hosts"
   add_foreign_key "experiences", "locations"
-  add_foreign_key "experiences", "relative_categories", column: "relative_categories_id"
+  add_foreign_key "hashtags", "blogs"
   add_foreign_key "hashtags", "tags"
+  add_foreign_key "relative_categories", "blogs"
   add_foreign_key "relative_categories", "categories"
+  add_foreign_key "relative_categories", "experiences"
 end
