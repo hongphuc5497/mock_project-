@@ -18,7 +18,7 @@
 						<div class="blogdetail_info">
 							<% @blog.categories.each do |category| %>
 								<p class="tag">
-									<%= category.category_name %>
+									<%= category.name %>
 								</p>
 							<% end %>
 
@@ -51,7 +51,7 @@
 							<% @blog.tags.each do |tag| %>
 								<li>
 									<a href="" class="tag">
-										<%= tag.tag_name %>
+										<%= tag.name %>
 									</a>
 								</li>
 							<% end %>
@@ -128,7 +128,7 @@
 			      <p class="blogdetail_aside_title">Blog category</p>
 			      <select name="category_choose" class="blogdetail_aside_select">
 							<% @blog.categories.each do |category| %>
-							<option value="<%= category.category_name %>"><%= category.category_name %> </option>
+							<option value="<%= category.name %>"><%= category.name %> </option>
 							<% end %>
 						</select>
 				</div>

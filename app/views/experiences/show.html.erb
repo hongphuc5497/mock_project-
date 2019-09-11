@@ -1,3 +1,7 @@
+<%= content_for :title_header do %>
+	Experience | SUiTO
+<% end %>
+
 <div class="top_main_view">
   <section class="ex_mv_wrap">
     <div class="">
@@ -8,13 +12,7 @@
         <div class="common_inner">
           <ul class="pankuzu_list">
             <li class="pankuzu_item">
-              <a href="">Top</a>
-            </li>
-            <li class="pankuzu_item">
-              <a href="">Experience</a>
-            </li>
-            <li class="pankuzu_item">
-              <span>Japanese Calligraphy</span>
+              <%= render_breadcrumbs :tag => "li class='pankuzu_item'", :separator => "" %>
             </li>
           </ul>
         </div>

@@ -1,23 +1,26 @@
+<%= content_for :title_header do %>
+	Experience | SUiTO
+<% end %>
+
 <div class="top_main_view">
   <section class="ex_mv_wrap">
     <div class="">
       <h1 class="ex_main_title">
-        Find Things to Do in Fukuoka
+        Experiences
         <%= image_tag("common/spring_icon", alt: "find things to do in Fukuoka") %>
       </h1>
+
       <div class="pankuzu_wrap">
         <div class="common_inner">
           <ul class="pankuzu_list">
             <li class="pankuzu_item">
-              <a href="">Top</a>
-            </li>
-            <li class="pankuzu_item">
-              <span>Experience</span>
-            </li>
+              <%= render_breadcrumbs :tag => "li class='pankuzu_item'", :separator => "" %>
           </ul>
         </div>
       </div>
+      
       <div class="top_mv_filter" id="MvExpFilter"></div>  
+
       <div class="ex_main_block">
         <div class="ex_main_block_inner">
           <div class="ex_main_left">
@@ -25,6 +28,7 @@
               <p class="ex_new_tag">
                 <%= image_tag("ex/new_icon") %>
               </p>
+
               <div class="ex_info_box">
                 <a href="" class="ex_info_title">Japanese Calligraphy</a>
                 <div class="ex_info_inner">
@@ -32,9 +36,11 @@
                   <a href="" class="ex_info_right"><span>Entertainment</span></a>
                 </div>
               </div>
+              
               <span class="ex_main_price">¥2,400</span>
             </div>
           </div>
+
           <div class="ex_main_right">
             <form action="" method="" class="ex_main_form">
               <div class="header_search_block ex_main_search">
@@ -85,6 +91,7 @@
       </div>
     </div>
   </section>
+
   <div class="common_inner">
     <section class="ex_list_block">
       <div class="ex_list_top_area">
@@ -308,11 +315,7 @@
       </ul>
     </section>
   </div>
-<!--
-  <section class="top_movie_wrap">
-    <div id="TopMovie"></div>
-  </section>
--->
+
   <section class="common_bottom_pic_block">
     <%= image_tag("common/bottom_mv_pic") %>
     <a href="" class="common_bottom_pic_btn"><span>Japanese Restaurant SUiTO</span></a>

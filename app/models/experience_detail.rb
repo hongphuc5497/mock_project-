@@ -1,4 +1,4 @@
-class BlogDetail < ApplicationRecord
+class ExperienceDetail < ApplicationRecord
   is_impressionable 
   has_many :impressions, as: :impressionable 
 

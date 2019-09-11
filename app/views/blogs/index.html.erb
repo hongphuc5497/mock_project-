@@ -6,6 +6,7 @@
   <div class="top_main_view">
     <section class="ex_mv_wrap">
       <div class="">
+
         <h1 class="ex_main_title">
 	        Blogs
           <%= image_tag("common/spring_icon.png", alt: "find things to do in Fukuoka") %>
@@ -34,7 +35,7 @@
 							<% if @blog_first.categories.any? %>
 								<span class="blog_main_left_tag"> 
 									<% @blog_first.categories.each do |category| %>
-										<%= category.category_name %>
+										<%= category.name %>
 									<% end %>
 								</span>
 							<% end %>
@@ -49,26 +50,26 @@
 												<% @blog_first.tags.each do |tag| %>
 													<li>
 														<a href="" class="tag">
-															<%= tag.tag_name %>
+															<%= tag.name%>
 														</a>
 													</li>
 												<% end %>
 											</ul>
 
 											<% if @blog_first.image.attached? %>
-											<div class="people" style="background: url(<%= url_for(@blog_first.image) %>)center center no-repeat;background-size: cover;"></div>
+												<div class="people" style="background: url(<%= url_for(@blog_first.image) %>)center center no-repeat;background-size: cover;"></div>
 											<% else %>											
-											<div class="people" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;"></div>
+												<div class="people" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;"></div>
 											<% end %>
 								</div>
 							</div>
 
-								<span class="blog_main_place_tag">
-									<%= image_tag("common/place_icon_w.png") %>
-									<a href=""><%= @blog_first.location.province %></a>
-								</span>
-							</div>
-            </div>
+							<span class="blog_main_place_tag">
+								<%= image_tag("common/place_icon_w.png") %>
+								<a href=""><%= @blog_first.location.province %></a>
+							</span>
+						</div>
+          </div>
 
             <div class="ex_main_right">
         			<div class="header_search_block ex_main_search">
@@ -79,20 +80,21 @@
         							<div class="" id="BlogCat_Choose">
               				  <ul class="top_mv_place_list">
 													<% @categories.each do |category| %>
-														<li class="top_mv_place_item" data-cat="<%= category.category_name %>"><%= category.category_name %></li>
+														<li class="top_mv_place_item" data-cat="<%= category.name %>"><%= category.name %></li>
 													<% end %>
               				</div>
           				  </div>
         					</div>
 
-									<%= f.text_field :tags_tag_name_cont, class: "blog_search_key" %>
+									<%= f.text_field :tags_name_cont, class: "blog_search_key" %>
+
                   <div class="header_exp_block">
         					  <input type="text" name="place" class="header_search_place" id="ExSearchPlace">
         					  <div class="header_exp_popup" id="ExPlacePop">
         							<div class="" id="EXSearchPlace_Choose">
               				  <ul class="top_mv_place_list">
 													<% @locations.each do |location| %>
-														<li class="mv_place_item" data-explace="<%= location.province %>"><%= location.province %></li>
+														<li class="top_mv_place_item" data-cat="<%= location.province %>"><%= location.province %></li>
 													<% end %>
               				  </ul>
               				</div>
@@ -105,6 +107,7 @@
             </div>
           </div>
         </div>
+				
       </div>
     </section>
 
@@ -123,7 +126,7 @@
 				        <div class="pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 					        <span class="tag">
 										<% @blog_impression_1.categories.each do |category| %>
-											<%= category.category_name %>
+											<%= category.name %>
 										<% end %>
 									</span>
 				        </div>
@@ -139,7 +142,7 @@
 				        <div class="pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 					        <span class="tag">
 										<% @blog_impression_2.categories.each do |category| %>
-											<%= category.category_name %>
+											<%= category.name %>
 										<% end %>
 									</span>
 				        </div>
@@ -155,7 +158,7 @@
 				        <div class="pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 					        <span class="tag">
 										<% @blog_impression_3.categories.each do |category| %>
-											<%= category.category_name %>
+											<%= category.name %>
 										<% end %>
 									</span>
 				        </div>
@@ -171,7 +174,7 @@
 							<a href="" class="blog_pic" style="background: url(<%= image_url("common/sample_pic.jpg") %>) center center no-repeat;background-size: cover;">
 								<span class="tag">
 									<% blog.categories.each do |category| %>
-										<%= category.category_name %>
+										<%= category.name %>
 									<% end %>	
 								</span>
 							</a>
@@ -197,7 +200,7 @@
 										<% blog.tags.each do |tag| %>
 											<li>
 												<a href=" class="tag">
-													<%= tag.tag_name %>
+													<%= tag.name%>
 												</a>
 											</li>
 										<% end %>
