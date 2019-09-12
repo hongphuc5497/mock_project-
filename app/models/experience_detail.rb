@@ -4,6 +4,8 @@ class ExperienceDetail < ApplicationRecord
 
   belongs_to :experience
 
+  has_one_attached :image
+
   validates :title, :description, :content, :language, :age, :duration,
             :price_adult, :price_children, :price_infant, presence: true 
   validates :title, length: { maximum: 50 }

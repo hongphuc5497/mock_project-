@@ -24,68 +24,75 @@
       <div class="ex_main_block">
         <div class="ex_main_block_inner">
           <div class="ex_main_left">
-            <div class="ex_main_pic" style="background: url(<%= image_url('ex/sample_pic')%>) center center no-repeat;background-size: cover;">
+            <% if @experience_latest.present? %>
+              <% if @experience_latest.experience_detail.image.attached? %>
+                <div class="ex_main_pic" style="background: url(<%= url_for(@experience_latest.image) %>) center center no-repeat;background-size: cover;">
+              <% else %>
+                <div class="ex_main_pic" style="background: url(<%= image_url('ex/sample_pic')%>) center center no-repeat;background-size: cover;">
+              <% end %>
+
               <p class="ex_new_tag">
                 <%= image_tag("ex/new_icon") %>
               </p>
 
               <div class="ex_info_box">
-                <a href="" class="ex_info_title">Japanese Calligraphy</a>
+                <a href="<%= experience_path(@experience_latest) %>" class="ex_info_title">
+                  <%= @experience_latest.experience_detail.title %>
+                </a>
+
                 <div class="ex_info_inner">
-                  <a href="" class="ex_info_left"><span>Momochihama</span></a>
-                  <a href="" class="ex_info_right"><span>Entertainment</span></a>
+                  <%= link_to @experience_latest.location.province, experiences_path(:q => { :location_province_has_any_term => @experience_latest.location.province }), class: "ex_into_left" %>
+                  <% if @experience_latest.categories.present? %>
+                    <%= link_to @experience_latest.categories.first.name, experiences_path(:q => { :location_province_has_any_term => @experience_latest.categories.first.name }), class: "ex_into_right" %>
+                  <% end %>
                 </div>
-              </div>
-              
-              <span class="ex_main_price">¥2,400</span>
+              </div>                 
+                  
+              <span class="ex_main_price">
+                <%= number_to_currency(@experience_latest.experience_detail.price_adult.to_f) %> 
+              </span>
+            <% end %>
             </div>
           </div>
 
           <div class="ex_main_right">
-            <form action="" method="" class="ex_main_form">
-              <div class="header_search_block ex_main_search">
-                <input type="text" name="ex_date" class="header_search_date" id="ExSearchDate">
-                <div class="header_exp_block">
-                  <input type="text" name="ex_place" class="header_search_place" id="ExSearchPlace">
-                  <div class="header_exp_popup" id="ExPlacePop">
-              
-                    <div class="" id="EXSearchPlace_Choose">
-                      <ul class="top_mv_place_list">
-                        <li class="top_mv_place_item" data-explace="博多 hakata">博多 hakata</li>
-                        <li class="top_mv_place_item" data-explace="天神 tenjin">天神 tenjin</li>
-                        <li class="top_mv_place_item" data-explace="中洲 Nakasu">中洲 Nakasu</li>
-                        <li class="top_mv_place_item" data-explace="大濠公園 Ohori Park">大濠公園 Ohori Park</li>
-                        <li class="top_mv_place_item" data-explace="百道浜 Momochihama">百道浜 Momochihama</li>
-                        <li class="top_mv_place_item" data-explace="西新 Nishijin">西新 Nishijin</li>
-                        <li class="top_mv_place_item" data-explace="西区 Nishiku">西区 Nishiku</li>
-                        <li class="top_mv_place_item" data-explace="東区 Higashiku">東区 Higashiku</li>
-                      </ul>
-                    </div>
-                      
-                  </div>
+            <%= search_form_for @experience_search, class: "ex_main_form" do |f| %>
+              <div class="header_exp_block">
+                <div class="input-daterange input-group" data-provide='datepicker'>
+                  <%= f.search_field :experience_dates_form_gteq, autocomplete: "off", class: "header_search_date datepicker input-sm form-control", placeholder: "From date"%>
+                  <span class="input-group-addon header_search_date_span">to</span>
+                  <%= f.search_field :experience_dates_to_lteq, autocomplete: "off", class: "header_search_date datepicker input-sm form-control", placeholder: "To date"%>
                 </div>
-                <div class="header_exp_block">
-                  <input type="text" name="ex_exp" class="header_search_exp" id="ExSearchExp">
-                  <div class="header_exp_popup" id="ExSearchPop">
-                    
-                    <div class="checkbox_style">
-                      <input type="checkbox" name="ex_experience" value="exp01" id="Ex01" data-excheck="アート">
-                      <label for="Ex01"><span>アート</span></label>
-                    </div>
-                    <div class="checkbox_style">
-                      <input type="checkbox" name="ex_experience" value="exp02" id="Ex02" data-excheck="ライフスタイル">
-                      <label for="Ex02"><span>ライフスタイル</span></label>
-                    </div>
-                    <div class="checkbox_style">
-                      <input type="checkbox" name="ex_experience" value="exp03" id="Ex03" data-excheck="フード＆ドリンク">
-                      <label for="Ex03"><span>フード＆ドリンク</span></label>			
-                    </div>
-                    
-                  </div>
-                </div>
-                <input type="submit" value="検索" class="header_search_submit">
               </div>
-            </form>
+
+              <div class="header_exp_block">
+                <%= f.search_field :location_province_has_any_term, class: "header_search_place", id: "ExSearchPlace", autocomplete: "off" %>
+                <div class="header_exp_popup" id="ExPlacePop">
+                  <div class="" id="EXSearchPlace_Choose">
+                    <ul class="top_mv_place_list">
+                      <% @locations.each do |location| %>
+                        <li class="top_mv_place_item  <%= cur_stick_active(location.province, :location_province_has_any_term) %>" data-explace="<%= location.province %>">
+                          <%= location.province %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="header_exp_block">
+                <%= f.search_field :categories_name_has_any_term, class: "header_search_exp", id: "BlogCat", autocomplete: "off" %>
+                <div class="header_exp_popup" id="BlogCatPop">
+                  </ul class="top_mv_place_list" >
+                    <% @categories.each do |category| %>
+                      <li class="top_mv_place_item <%= cur_stick_active(category.name, :categories_name_has_any_term) %>" data-explace="<%= category.name %>">
+                        <%= category.name %> 
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -95,43 +102,10 @@
   <div class="common_inner">
     <section class="ex_list_block">
       <div class="ex_list_top_area">
-        <p class="ex_list_num"><span>73</span><span>/</span><span>73</span> experience</p>
-        <ul class="ex_list_up_pager">
-          <li class="ex_list_up_pager_item">
-            <a href="" class="prev">
-              <%= image_tag("ex/left_icon01") %>
-            </a>
-          </li>
-          <li class="ex_list_up_pager_item">
-            <a href="" class="common active">
-              1
-            </a>
-          </li>
-          <li class="ex_list_up_pager_item">
-            <a href="" class="common active">
-              2
-            </a>
-          </li>
-          <li class="ex_list_up_pager_item">
-            <a href="" class="common active">
-              3
-            </a>
-          </li>
-          <li class="ex_list_up_pager_item">
-            ...
-          </li>
-          <li class="ex_list_up_pager_item">
-            <a href="" class="common active">
-              7
-            </a>
-          </li>
-          <li class="ex_list_up_pager_item">
-            <a href="" class="next">
-              <%= image_tag("ex/right_icon01") %>
-            </a>
-          </li>
-        </ul>
+        <p class="ex_list_num"><span><%= @blog_count %></span><span>/</span><span><%= @blog_count %></span> blogs</p>
+				<%= paginate @blogs %>
       </div>
+
       <div class="ex_list_loop_block clearfix">
         <article class="ex_comon_list">
           <a href="" class="ex_common_up">

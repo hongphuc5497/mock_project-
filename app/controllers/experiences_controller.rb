@@ -7,6 +7,7 @@ class ExperiencesController < ApplicationController
     @experience_search       = Experience.ransack(params[:q])
     @experience_search.sorts = 'title desc' if @experience_search.sorts.empty? 
     @experiences             = @experience_search.result(distinct: true).order(created_at: :DESC).page(params[:page]).per(3) 
+    @experience_count        = Experience.count
     @page                    = params[:page].to_i
     respond_to do |format| 
       format.html

@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
     @categories = Category.all
     @locations  = Location.all
     
-    @search       = Blog.ransack(params[:q])
+    @search       = .ransack(params[:q])
     @search.sorts = 'blog_details.title desc' if @search.sorts.empty?
     @blogs        = @search.result(distinct: true).order(created_at: :DESC).page(params[:page]).per(3)
 
