@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_051732) do
+ActiveRecord::Schema.define(version: 2019_09_12_031540) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -68,6 +68,12 @@ ActiveRecord::Schema.define(version: 2019_09_11_051732) do
     t.string "title"
     t.text "description"
     t.text "content"
+    t.date "date_from"
+    t.date "date_to"
+    t.integer "month"
+    t.integer "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["experience_id"], name: "index_experience_details_on_experience_id"
   end
 
