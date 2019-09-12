@@ -22,6 +22,6 @@ class Experience < ApplicationRecord
         @available_dates.push available.strftime('%Y-%m-%d')
       end 
     end
-    return @dates
+    @dates
   end
 end

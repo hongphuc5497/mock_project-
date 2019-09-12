@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   match "/500", to: "errors#internal_server_error", via: :all 
 
   resources :blogs,       only: %i[index show]
-
   resources :experiences do
     member do 
       get 'application_form', to: 'experiences#application_form'
